@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Game {
     public static void main(String[] args) {
         startGame();
@@ -7,7 +5,7 @@ public class Game {
     private static Die[] dice = new Die[3];
     private static char[] diceResults = new char[3];
     private static void startGame() {
-
+        User.intro();
     }
     private static void generateDice() {        //Fills the dice array with entirely new dice
         for (int i = 0; i < dice.length; i++) {
