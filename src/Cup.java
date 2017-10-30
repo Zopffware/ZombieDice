@@ -1,18 +1,17 @@
+import java.util.Random;
+
 public class Cup {
-
-    boolean dead = true;
-    String[] playerRolls = new String[6];
-
-
-    private String difficulty1 = "e";
-    private String difficulty2 = "m";
-    private String difficulty3 = "h";
-
-    private String points = "brains";
-    private String damage = "bullet";
-    private String goAgain = "runner";
-
-    private int riskOfDying = 10;
-    private int riskOfDying2 = 50;
-    private int riskOfDying3 = 80;
+    public static Die newDie() {
+        Die die = new Die();
+        Random random = new Random();
+        int difficulty = random.nextInt(99);
+        if (difficulty < 46) {
+            die.setDifficulty('e');
+        } else if (difficulty < 77) {
+            die.setDifficulty('m');
+        } else {
+            die.setDifficulty('h');
+        }
+        return die;
+    }
 }
