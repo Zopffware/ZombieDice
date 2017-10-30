@@ -16,14 +16,22 @@ public class Player {
     public int getBrainsEaten() {
         return brainsEaten;
     }
-    public void addBrainsEaten(int number) {
-        brainsEaten += number;
+    public void eat() {
+        brainsEaten += survivorsCornered;
+        clearSurvivorsCornered();
     }
     public int getSurvivorsCornered() {
         return survivorsCornered;
     }
-    public void setSurvivorsCornered(int number) {
-        survivorsCornered = number;
+    public void addSurvivorsCornered(int number) {
+        if (number <= 3) {
+            survivorsCornered += number;
+        } else {
+            System.err.println("Invalid number of survivors cornered.");
+        }
+    }
+    public void clearSurvivorsCornered() {
+        survivorsCornered = 0;
     }
     public int getShotsFired() {
         return shotsFired;
