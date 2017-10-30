@@ -38,33 +38,13 @@ public class User {
             amount = scanner.nextInt();
             scanner.nextLine();
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            if (amount == 4) {
-                for(int a = 0; a<4; a++) {
+            if (amount <= 4 && amount > 1) {
+                for(int a = 0; a<amount; a++) {
                     System.out.println("Player " + (a + 1) + "'s Name?");
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     input = scanner.nextLine();
                     player.setName(input, a);
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                }
-                cont = false;
-            } else if (amount == 3) {
-                for(int a = 0; a<3; a++) {
-                    System.out.println("Player " + (a + 1) + "'s Name?");
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    input = scanner.nextLine();
-                    player.setName(input, a);
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                }
-                cont = false;
-            } else if (amount == 2) {
-                    for(int a = 0; a<2; a++) {
-                        System.out.println("Player " + (a + 1) + "'s Name?");
-                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                        input = scanner.nextLine();
-                        player.setName(input, a);
-                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    }
-                cont = false;
+                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             } else {
                 System.out.println("***That's not a valid amount of players!***");
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
