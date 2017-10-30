@@ -1,10 +1,40 @@
+import java.util.Scanner;
+
 public class Game {
     public static void main(String[] args) {
         startGame();
     }
     private static Die[] dice = new Die[3];
     private static char[] diceResults = new char[3];
+    private static boolean play = true;
+    private static boolean cont = true;
+    private static Scanner scanner =  new Scanner(System.in);
+    private static String choice;
     private static void startGame() {
+//        User.intro();
+
+        while (play){
+            generateDice();
+            
+            while (cont) {
+                boolean invalid = true;
+                rollDice();
+                printResults();
+                while (invalid) {
+                    System.out.println("Continue? (y/n)");
+                    choice = scanner.nextLine();
+                    if (choice.equalsIgnoreCase("y")) {
+                        replaceDice();
+                        invalid = false;
+                    } else if (choice.equalsIgnoreCase("n")) {
+                        cont = false;
+                        invalid = false;
+                }
+            }
+        }
+
+
+
 
     }
     private static void generateDice() {        //Fills the dice array with entirely new dice
