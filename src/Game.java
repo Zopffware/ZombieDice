@@ -58,7 +58,7 @@ public class Game {
 
                 }
                 printResults();
-                System.out.println(players.get(n).getName() + " has corneered " + players.get(n).getSurvivorsCornered() + " survivors");
+                System.out.println(players.get(n).getName() + " has cornered " + players.get(n).getSurvivorsCornered() + " survivors");
                 System.out.println(players.get(n).getName() + " has been shot " + players.get(n).getShotsFired() + " times");
 
                 while (invalid) {
