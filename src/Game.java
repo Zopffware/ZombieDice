@@ -35,12 +35,7 @@ public class Game {
             System.out.println("");
             System.out.println("");
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
+            delay(1000);
             generateDice();
 
             while (cont) {
@@ -55,6 +50,8 @@ public class Game {
 
                 }
                 printResults();
+                delay(1000);
+                System.out.println("");
                 System.out.println(players.get(n).getName() + " has cornered " + players.get(n).getSurvivorsCornered() + " survivors");
                 System.out.println(players.get(n).getName() + " has been shot " + players.get(n).getShotsFired() + " times");
 
@@ -67,6 +64,7 @@ public class Game {
                 }
 
                 while (invalid) {
+                    System.out.println("");
                     System.out.println("Continue? (y/n)");
                     String choice = scanner.nextLine();
                     if (choice.equalsIgnoreCase("y")) {
@@ -115,6 +113,7 @@ public class Game {
     }
     private static void printResults() {        //Prints the results of the dice roll to the player
         for (int i = 0; i < dice.length; i++) {
+            delay(500);
             System.out.print("Victim " + (i + 1));
             switch (dice[i].getDifficulty()) {
                 case 'e':
@@ -143,5 +142,13 @@ public class Game {
                     System.err.println("Invalid result");
             }
         }
+    }
+    private static void delay(int t){
+        try {
+            Thread.sleep(t);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
