@@ -8,7 +8,6 @@ public class Game {
     private static Die[] dice = new Die[3];
     private static ArrayList <Player> players = new ArrayList<Player>();
     private static char[] diceResults = new char[3];
-    private static boolean cont = true;
     private static Scanner scanner =  new Scanner(System.in);
 
 
@@ -22,14 +21,9 @@ public class Game {
             players.add(new Player(input, i + 1));
         }
 
-
-//        for (Player player :players) {
-//            System.out.println(player.getName());
-//
-//        }
         boolean play = true;
         while (play) {
-            cont = true;
+            boolean cont = true;
             System.out.println("");
             System.out.println("");
             System.out.println("");
