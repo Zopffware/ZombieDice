@@ -56,7 +56,7 @@ public class Game {
                     if (diceResults[i] == 'b'){
                         players.get(n).addSurvivorsCornered(1);
                     } else if (diceResults[i] == 's'){
-                        players.get(n).setShotsFired(1);
+                        players.get(n).addShotsFired(1);
                     }
 
                 }

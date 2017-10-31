@@ -45,7 +45,7 @@ public class Player {
     public int getShotsFired() {
         return shotsFired;
     }
-    public void setShotsFired(int number) {
+    public void addShotsFired(int number) {
         shotsFired += number;
     }
     public void resetShotsFired () {
