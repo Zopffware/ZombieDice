@@ -30,8 +30,11 @@ public class Game {
         boolean play = true;
         while (play) {
             cont = true;
-
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
             System.out.println(players.get(n).getName());
+            System.out.println("-------");
             System.out.println("Brains Eaten: " + players.get(n).getBrainsEaten());
             System.out.println("Survivors cornered: " + players.get(n).getSurvivorsCornered());
             System.out.println("Shots fired: " + players.get(n).getShotsFired());
@@ -60,6 +63,14 @@ public class Game {
                 printResults();
                 System.out.println(players.get(n).getName() + " has cornered " + players.get(n).getSurvivorsCornered() + " survivors");
                 System.out.println(players.get(n).getName() + " has been shot " + players.get(n).getShotsFired() + " times");
+
+                if (players.get(n).getShotsFired() >= 3){
+                    players.get(n).clearSurvivorsCornered();
+                    players.get(n).resetShotsFired();
+                    invalid = false;
+                    cont = false;
+
+                }
 
                 while (invalid) {
                     System.out.println("Continue? (y/n)");
