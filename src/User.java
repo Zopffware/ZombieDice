@@ -6,9 +6,9 @@ public class User {
     static String input = "";
     static int amount = 0;
     static boolean cont = true;
-    static Player player = new Player();
+//    static Player player = new Player();
 
-    public static void intro(){
+    public static int intro(){
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("ZOMBIE DICE");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -32,23 +32,25 @@ public class User {
                 "                         /`   /`     o\\          \n" +
                 "                         |___ |_______|          \n");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        while(cont) {
+//        while(cont) {
             System.out.println("How many players? (2-4): ");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             amount = scanner.nextInt();
             scanner.nextLine();
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            if (amount <= 4 && amount > 1) {
-                for(int a = 0; a<amount; a++) {
-                    System.out.println("Player " + (a + 1) + "'s Name?");
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                    input = scanner.nextLine();
-                    player.setName(input, a);
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-            } else {
-                System.out.println("***That's not a valid amount of players!***");
-                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            }
-        }
+//            if (amount <= 4 && amount > 1) {
+//                for(int a = 0; a<amount; a++) {
+//                    System.out.println("Player " + (a + 1) + "'s Name?");
+//                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//                    input = scanner.nextLine();
+//                    player.setName(input, a);
+//                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//                }
+//            } else {
+//                System.out.println("***That's not a valid amount of players!***");
+//                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//            }
+//        }
+        return amount;
     }
 }

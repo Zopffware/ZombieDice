@@ -3,6 +3,15 @@ public class Player {
     private int brainsEaten = 0;
     private int survivorsCornered = 0;
     private int shotsFired = 0;
+
+
+    public Player(String playerName, int brains, int survivors, int shots) {
+        name = playerName;
+        brainsEaten = brains;
+        survivorsCornered = survivors;
+        shotsFired = shots;
+    }
+
     public String getName() {
         return name;
     }
@@ -37,6 +46,9 @@ public class Player {
         return shotsFired;
     }
     public void setShotsFired(int number) {
-        shotsFired = number;
+        shotsFired += number;
+    }
+    public void resetShotsFired () {
+        shotsFired = 0;
     }
 }

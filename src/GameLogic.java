@@ -8,10 +8,10 @@ public class GameLogic {
 
         Scanner scanner = new Scanner(System.in);
 
-        Player player1 = new Player();
-        Player player2 = new Player();
-        User user = new User();
-        Game game = new Game();
+//        Player player1 = new Player();
+//        Player player2 = new Player();
+//        User user = new User();
+//        Game game = new Game();
 
         boolean playingGame = true;
         boolean playerOneTurn = true;
