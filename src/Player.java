@@ -5,17 +5,10 @@ public class Player {
     private int shotsFired = 0;
 
 
-    public Player(String playerName, int brains, int survivors, int shots) {
-        name = playerName;
-        brainsEaten = brains;
-        survivorsCornered = survivors;
-        shotsFired = shots;
-    }
-
     public String getName() {
         return name;
     }
-    public void setName(String playerName, int playerNumber) {
+    public Player(String playerName, int playerNumber) {
         if (playerName.equals("")) {
             name = "Player " + playerNumber;
         } else {

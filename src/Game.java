@@ -19,7 +19,7 @@ public class Game {
         for (int i = 0; i < count; i++) {
             System.out.println("Player " + (i + 1) + "'s name:");
             String input = scanner.nextLine();
-            players.add(new Player(input, 0, 0, 0));
+            players.add(new Player(input, i + 1));
         }
 
 
