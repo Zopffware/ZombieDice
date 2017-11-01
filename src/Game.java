@@ -14,7 +14,6 @@ public class Game {
     private static void startGame() throws InterruptedException {
         int count = User.intro();
 
-
         for (int i = 0; i < count; i++) {
             System.out.println("Player " + (i + 1) + "'s name:");
             String input = scanner.nextLine();
@@ -40,6 +39,11 @@ public class Game {
                     }
 
                 }
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+
                 printResults();
                 delay(500);
                 System.out.println("");
