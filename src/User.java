@@ -31,15 +31,15 @@ public class User {
         int amount = 0;
         while (cont) {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("How many players? (2-4): ");
+            System.out.println("How many players? (2+): ");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             amount = scanner.nextInt();
-            if (amount >= 2 && amount <= 4) {
+            if (amount >= 2) {
 //            scanner.nextLine();
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 cont = false;
             } else {
-                System.out.println("Please enter a valid number of players (2-4): ");
+                System.out.println("Please enter a valid number of players (2+): ");
             }
         }
             return amount;
