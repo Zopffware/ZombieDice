@@ -6,14 +6,14 @@ public class Game {
         startGame();
     }
     private static Die[] dice = new Die[3];
-    private static ArrayList <Player> players = new ArrayList<Player>();
+    private static ArrayList <Player> players = new ArrayList<>();
     private static char[] diceResults = new char[3];
     private static Scanner scanner =  new Scanner(System.in);
-
+    private static int n = 0;
 
     private static void startGame() throws InterruptedException {
         int count = User.intro();
-        int n = 0;
+
 
         for (int i = 0; i < count; i++) {
             System.out.println("Player " + (i + 1) + "'s name:");
@@ -24,17 +24,8 @@ public class Game {
         boolean play = true;
         while (play) {
             boolean cont = true;
-            System.out.println("");
-            System.out.println("");
-            System.out.println("");
-            System.out.println(players.get(n).getName());
-            System.out.println("-------");
-            System.out.println("Brains Eaten: " + players.get(n).getBrainsEaten());
-            System.out.println("Survivors cornered: " + players.get(n).getSurvivorsCornered());
-            System.out.println("Shots fired: " + players.get(n).getShotsFired());
-            System.out.println("");
-            System.out.println("");
 
+            drawStats();
             delay(1000);
             generateDice();
 
@@ -43,19 +34,22 @@ public class Game {
                 rollDice();
                 for (int i = 0; i < diceResults.length; i++) {
                     if (diceResults[i] == 'b'){
-                        players.get(n).addSurvivorsCornered(1);
+                        players.get(n).addSurvivorsCornered();
                     } else if (diceResults[i] == 's'){
-                        players.get(n).addShotsFired(1);
+                        players.get(n).addShotsFired();
                     }
 
                 }
                 printResults();
-                delay(1000);
+                delay(500);
                 System.out.println("");
                 System.out.println(players.get(n).getName() + " has cornered " + players.get(n).getSurvivorsCornered() + " survivors");
                 System.out.println(players.get(n).getName() + " has been shot " + players.get(n).getShotsFired() + " times");
 
                 if (players.get(n).getShotsFired() >= 3){
+                    drawStats();
+                    System.out.println("Press enter to start next player's turn");
+                    scanner.nextLine();
                     players.get(n).clearSurvivorsCornered();
                     players.get(n).resetShotsFired();
                     invalid = false;
@@ -70,8 +64,11 @@ public class Game {
                     if (choice.equalsIgnoreCase("y")) {
                         replaceDice();
                         invalid = false;
-                    } else if (choice.equalsIgnoreCase("n")) {
+                    } else if (choice.equalsIgnoreCase("n")){
                         players.get(n).eat();
+                        drawStats();
+                        System.out.println("Press enter to start next player's turn");
+                        scanner.nextLine();
                         players.get(n).clearSurvivorsCornered();
                         players.get(n).resetShotsFired();
                         cont = false;
@@ -88,6 +85,8 @@ public class Game {
                 }
 
             }
+
+
             n = n +1;
             if (n >= count){
                 n =0;
@@ -150,5 +149,17 @@ public class Game {
             e.printStackTrace();
         }
 
+    }
+    private static void drawStats(){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println(players.get(n).getName());
+        System.out.println("-------");
+        System.out.println("Brains Eaten: " + players.get(n).getBrainsEaten());
+        System.out.println("Survivors cornered: " + players.get(n).getSurvivorsCornered());
+        System.out.println("Shots fired: " + players.get(n).getShotsFired());
+        System.out.println("");
+        System.out.println("");
     }
 }

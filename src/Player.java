@@ -5,43 +5,39 @@ public class Player {
     private int shotsFired = 0;
 
 
-    public String getName() {
+    String getName() {
         return name;
     }
-    public Player(String playerName, int playerNumber) {
+    Player(String playerName, int playerNumber) {
         if (playerName.equals("")) {
             name = "Player " + playerNumber;
         } else {
             name = playerName;
         }
     }
-    public int getBrainsEaten() {
+    int getBrainsEaten() {
         return brainsEaten;
     }
-    public void eat() {
+    void eat() {
         brainsEaten += survivorsCornered;
         clearSurvivorsCornered();
     }
-    public int getSurvivorsCornered() {
+    int getSurvivorsCornered() {
         return survivorsCornered;
     }
-    public void addSurvivorsCornered(int number) {
-        if (number <= 3) {
-            survivorsCornered += number;
-        } else {
-            System.err.println("Invalid number of survivors cornered.");
-        }
+    void addSurvivorsCornered() {
+            survivorsCornered ++;
     }
-    public void clearSurvivorsCornered() {
+    void clearSurvivorsCornered() {
         survivorsCornered = 0;
     }
-    public int getShotsFired() {
+    int getShotsFired() {
         return shotsFired;
     }
-    public void addShotsFired(int number) {
-        shotsFired += number;
+    void addShotsFired() {
+        shotsFired ++;
     }
-    public void resetShotsFired () {
+    void resetShotsFired() {
         shotsFired = 0;
     }
 }
